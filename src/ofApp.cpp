@@ -1,5 +1,6 @@
 #include "ofApp.h"
 
+
 //--------------------------------------------------------------
 void ofApp::setup(){
 	ofSetVerticalSync(true);
@@ -17,9 +18,9 @@ void ofApp::setup(){
     resolution = 30;
     position = ofPoint(ofGetWidth()*.5, ofGetHeight()*.5);
     ofSetCircleResolution(resolution);
-    
     gui = new ofxUISuperCanvas("SUPER COMPACT", OFX_UI_FONT_MEDIUM);
     gui->addSpacer();
+    gui->addSlider("", 0.0, 1000.0, &radius);
     gui->addTextArea("TEXT AREA", "Double tap the title above to toggle minified mode. Draw the title above to move the canvas around. All these settings are saved up exiting. This is super indead.");
     gui->addSpacer();
     gui->addSlider("RADIUS", 0.0, 1000.0, &radius);
